@@ -19,4 +19,5 @@ body
               span.title= item.title
             form(action="/todos/#{item._id}?_method=DELETE", method="POST")
               button x
+  a.new(href="/new_todo") New
   
