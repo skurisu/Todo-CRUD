@@ -4,7 +4,7 @@ body {
   font-family: 'Arvo', serif;
   background-color: #F1EEE2;
   background-image: url('/images/mutts.png');
-  background-size: 395px 190px;
+  background-size: 415px 210px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: left bottom;
@@ -32,6 +32,7 @@ a {
 h1 {
   text-align: center;
   font-weight: 700;
+  margin-top: 50px;
 }
 
 form {
