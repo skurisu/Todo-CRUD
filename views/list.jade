@@ -1,0 +1,22 @@
+doctype
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  link(rel="stylesheet", href="/styles/reset.css")
+  link(rel="stylesheet", href="/styles/styles.css")
+  script(type="text/javascript", src="http://code.jquery.com/jquery-2.1.1.min.js")
+  script(src="/js/todo.js")
+  title List
+body
+  div.outer_wrapper
+    h1 todos
+    div.list_container
+      ul
+        each item in todos
+          li
+            input(type="checkbox", name="is_done", data-todo-id="#{item._id}", data-checked="#{item.is_done}")
+            a(href="/todos/#{item._id}/edit")
+              span.title= item.title
+            form(action="/todos/#{item._id}?_method=DELETE", method="POST")
+              button x
+  
