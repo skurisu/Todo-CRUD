@@ -4,22 +4,20 @@ $(function() {
 
     if($(this).prop("checked")){
       $.ajax({
+        url: "/todos/" + doc_id + "/complete",
         type: "PUT",
         data: {
           is_done: true
-        },
-        url: "/todos/" + doc_id + "/complete"
+        }
       });
-      alert("sent PUT request to " + "/todos/" + doc_id + "/complete");
     } else {
       $.ajax({
+        url: "/todos/" + doc_id + "/uncomplete",
         type: "PUT",
         data: {
           is_done: false
-        },
-        url: "/todos/" + doc_id + "/uncomplete"
+        }
       });
-      alert("sent PUT request to " + "/todos/" + doc_id + "/uncomplete");
     }
   });
 

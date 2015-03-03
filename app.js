@@ -78,7 +78,6 @@ app.put('/todos/:id/complete', function (req, res) {
       res.send('winston');
     });
   });
-
 });
 
 app.put('/todos/:id/uncomplete', function (req, res) {

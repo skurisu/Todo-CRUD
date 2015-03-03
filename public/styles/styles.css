@@ -1,11 +1,100 @@
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+
 body {
-  background-color: pink;
+  font-family: 'Arvo', serif;
+  background-color: #F1EEE2;
+  background-image: url('/images/mutts.png');
+  background-size: 395px 190px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left bottom;
 }
 
-.outer_wrapper {
-  max-width: 600px
+
+/*------------------list.jade------------------*/
+/*.outer_wrapper {
+  height: 400px;
+}*/
+
+.middle_wrapper {
+  max-width: 500px;
+  max-height: 550px;
+  margin: auto;
+  margin-top: 50px;
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 h1 {
   text-align: center;
+  font-weight: 700;
+}
+
+form {
+  display: inline-block;
+  margin: auto;
+}
+
+form.form_newtodo {
+  display: inline-block;
+  margin: auto;
+}
+
+ul {
+  text-align: left;
+}
+
+ul li {
+  border-bottom: 2px dotted grey;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.title {
+  display: inline-block;
+  width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description {
+  color: grey;
+  margin-left: 55px;
+  font-size: 14px;
+  width: 402px;
+}
+
+.checkbox {
+  margin-right: 10px;
+  margin-left: 20px;
+  vertical-align: top;
+}
+
+.delete {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.new_button {
+  max-width: 500px;
+  margin: auto;
+}
+
+.new {
+  float: right;
+  color: grey;
+  display: inline-block;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
 }
