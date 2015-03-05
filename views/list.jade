@@ -1,3 +1,12 @@
+mixin checkbox(item)
+  div.listitem
+    input.checkbox(type="checkbox", name="is_done", data-todo-id="#{item._id}", data-checked="#{item.is_done}")
+    a(href="/todos/#{item._id}/edit")
+      h2.title= item.title
+    form(action="/todos/#{item._id}?_method=DELETE", method="POST")
+      button.delete x
+  p.description= item.description
+
 doctype
 html(lang="en")
 head
@@ -9,18 +18,23 @@ head
   title List
 body
   h1 Things To Do
-  div.middle_wrapper
-    div.list_container
-      ul
-        each item in todos
-          li
-            div.listitem
-              input.checkbox(type="checkbox", name="is_done", data-todo-id="#{item._id}", data-checked="#{item.is_done}")
-              a(href="/todos/#{item._id}/edit")
-                h2.title= item.title
-              form(action="/todos/#{item._id}?_method=DELETE", method="POST")
-                button.delete x
-            p.description= item.description
-  div.new_button
+    div.middle_wrapper
+      div.list_container
+        ul
+          each item in todos
+            if item.is_done == true 
+              li.completed
+                +checkbox(item)
+            else
+              li
+                +checkbox(item)
+  div.new_button            
+    div.complete Completed: &nbsp;
+      span.complete_number
+    div.incomplete Incomplete: &nbsp;
+      span.incomplete_number 
     a.new(href="/new_todo") New
+
+
+
       

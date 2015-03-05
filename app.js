@@ -68,10 +68,11 @@ app.delete('/todos/:id', function (req, res) {
 
 app.put('/todos/:id/complete', function (req, res) {
   var todo_id = req.params.id;
-  var is_done = req.body.is_done;
+  // var is_done = req.body.is_done;
+  // console.log(is_done);
 
   ToDo.findById(todo_id, function (err, todo) {
-    todo.is_done = is_done;
+    todo.is_done = req.body.is_done;
 
     todo.save(function (err) {
       if (err) throw err;
